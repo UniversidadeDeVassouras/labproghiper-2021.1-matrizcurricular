@@ -1,5 +1,5 @@
 class Disciplina():
-    __id:int
+    __id:int = -1
     __nome:str
     __carga_horaria:int
     __presencial:bool

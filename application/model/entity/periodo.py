@@ -1,8 +1,8 @@
 from typing import List
-from application.model.entity.disciplina import *
+from application.model.entity.disciplina import Disciplina
 
 class Periodo:
-    __id:int
+    __id:int = -1
     __nome:str
     __disciplinas: List[Disciplina] = []
 
@@ -26,3 +26,13 @@ class Periodo:
 
     def add_disciplina(self, disciplina: Disciplina) -> None:
         self.__disciplinas.append(disciplina)
+
+    def toDict(self):
+        disciplinas = []
+        for disciplina in self.__disciplinas:
+            disciplinas.append(disciplina.toDict())
+        return {
+            'id': self.get_id(),
+            'nome': self.get_nome(),
+            'disciplinas': disciplinas
+        }
