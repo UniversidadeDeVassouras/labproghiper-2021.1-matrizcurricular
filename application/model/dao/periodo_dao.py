@@ -1,13 +1,13 @@
 from application.model.entity.periodo import Periodo
 from application.model.entity.disciplina import Disciplina
 import json
-import os
 from typing import List
+
 
 class PeriodoDAO():
 
     def inserir(self, periodo: Periodo) -> None:
-        periodo_list = self.__listar_todos()
+        periodo_list = self.listar_todos()
         periodo.set_id(len(periodo_list) + 1)
         periodo_list.append(periodo)
         dict_list = self.__converter_periodolist_dictlist(periodo_list)
@@ -21,8 +21,8 @@ class PeriodoDAO():
                 if periodo.get_id() == periodo_id:
                     return periodo
         return None
-    
-    def __listar_todos(self) -> List[Periodo]:
+
+    def listar_todos(self) -> List[Periodo]:
         result = []
         with open('periodo.json', 'r') as file:
             periodo_list = json.load(file)

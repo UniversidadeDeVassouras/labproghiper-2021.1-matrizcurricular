@@ -1,5 +1,5 @@
 from typing import List
-from application.entity.disciplina import *
+from application.model.entity.disciplina import *
 
 class Professor():
     __id:int

@@ -2,7 +2,7 @@ class Disciplina():
     __id:int = -1
     __nome:str
     __carga_horaria:int
-    __presencial:bool
+    __presencial: bool
 
     def get_id(self) -> int:
         return self.__id
@@ -22,7 +22,7 @@ class Disciplina():
     def set_carga_horaria(self, carga_horaria: int) -> None:
         self.__carga_horaria = carga_horaria
 
-    def get_presencial(self) -> bool:
+    def is_presencial(self) -> bool:
         return self.__presencial
 
     def set_presencial(self, presencial: bool) -> None:
